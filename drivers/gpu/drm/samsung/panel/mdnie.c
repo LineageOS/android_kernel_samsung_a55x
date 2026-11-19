@@ -1060,6 +1060,12 @@ static ssize_t mode_store(struct device *dev,
 	return count;
 }
 
+static ssize_t mode_max_show(struct device *dev,
+		struct device_attribute *attr, char *buf)
+{
+	return snprintf(buf, PAGE_SIZE, "%d\n", MODE_MAX);
+}
+
 static ssize_t scenario_show(struct device *dev,
 		struct device_attribute *attr, char *buf)
 {
@@ -1796,6 +1802,7 @@ ssize_t mdnie_store_check_test_mode(struct device *dev,
 
 struct panel_device_attr mdnie_dev_attrs[] = {
 	__MDNIE_ATTR_RW(mode, 0664, PA_DEFAULT),
+	__MDNIE_ATTR_RO(mode_max, 0444, PA_DEFAULT),
 	__MDNIE_ATTR_RW(scenario, 0664, PA_DEFAULT),
 	__MDNIE_ATTR_RW(accessibility, 0000, PA_DEFAULT),
 	__MDNIE_ATTR_RW(bypass, 0664, PA_DEFAULT),
