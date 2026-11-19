@@ -1797,7 +1797,7 @@ ssize_t mdnie_store_check_test_mode(struct device *dev,
 struct panel_device_attr mdnie_dev_attrs[] = {
 	__MDNIE_ATTR_RW(mode, 0664, PA_DEFAULT),
 	__MDNIE_ATTR_RW(scenario, 0664, PA_DEFAULT),
-	__MDNIE_ATTR_RW(accessibility, 0664, PA_DEFAULT),
+	__MDNIE_ATTR_RW(accessibility, 0000, PA_DEFAULT),
 	__MDNIE_ATTR_RW(bypass, 0664, PA_DEFAULT),
 	__MDNIE_ATTR_RW(lux, 0664, PA_DEFAULT),
 	__MDNIE_ATTR_RO(mdnie, 0444, PA_DEFAULT),
